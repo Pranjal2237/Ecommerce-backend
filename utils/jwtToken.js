@@ -12,7 +12,8 @@ const sendToken=(user,statusCode,res)=>{
             Date.now()+24*60*60*1000*7
         ),
         httpOnly:true,
-        sameSite:'none'
+        sameSite:'none',
+        secure:true
     }
 
     res.status(statusCode).cookie('token',token,options).json({
